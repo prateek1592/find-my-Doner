@@ -13156,12 +13156,12 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <li>It doesn't give accurate probabilities because independence assumption is too strong in reality; has a high bias since problem is oversimplified by the uncorrelated assumption.</li>
 <li>In our case, many of the ~100+ predictors would not be correlated strongly with each other since most of them are dummy variables and (since there are a high number of instances) would be uncorrelated. Also, the model doesn't suffer from a dimensionality curse due to its independence assumption; hence, it could be a fast, effective solution</li>
 </ul>
-<p>2) Ensemble methods:</p>
+<p>2) Gradient Boosting (An ensemble method):</p>
 <ul>
-<li>From my personal experience, ensemble methods like Boosting work beautifully in applications where there are skewed classes, for instance, trading signals, where you would like your model to say "no trade" more often than not, so that you have high conviction trades instead of getting pinched in transaction costs!</li>
-<li>Models like Random Forests can find complicated relationships in the data; boosted trees learn from their own errors, in a way. They are also more robust than, say, a single decision tree, since they average out over tons of trees. Also, random forests, for instance, can be made to deal with only a certain set of predictors for each tree they generate,thus reducing the dimensionality curse!</li>
-<li>These methods are slow to implement/train and are highly prone to overfitting (high variance)</li>
-<li>In our case, we have a skewed dependent variable (only 25% 1s and rest are 0s), so boost is very much needed.</li>
+<li>From my personal experience, Boosting works beautifully in applications where there are skewed classes, for instance, trading signals, where you would like your model to say "no trade" more often than not, so that you have high conviction trades instead of getting pinched constantly in transaction costs.</li>
+<li>Models like boosted trees learn from their own errors, in a way, and are capable of finding complicated relationships in the data. They are also more robust than, say, a single decision tree, since they average out over tons of trees. Also, boosted trees, for instance, can be made to deal with only a certain set of predictors for each tree they generate, thus mitigating the dimensionality curse.</li>
+<li>It is, however, slow to implement/train and is highly prone to overfitting (high variance), if not tuned properly</li>
+<li>In our case, we have a skewed dependent variable (only 25% 1s and rest are 0s), so boosting is very much needed.</li>
 </ul>
 <p>3) SVMs:</p>
 <ul>
